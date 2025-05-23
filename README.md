@@ -56,6 +56,11 @@ Para executar o projeto localmente, siga os passos abaixo:
 
         Crie um banco de dados no MySQL (ex: site_w1).
 
+        Tabela "usuario" com id (primária), nome, email, senha, genero
+        Tabela "dados_patri" com id (primária), user_id (estrangeira da usuario), qtd_viagens, qtd_aposentadoria, qtd_casamento, qtd_filhos, qtd_bolsa, qtd_fundInves, qtd_bdrs, qtd_crypto 	
+        Tabela "patrimony_snapshots" com id (primária), user_id (estrangeira da dados_patri), timestamp, patrimonio_liquido, total_rendimentos, max_alta_ativo,	max_alta_valor,	max_baixa_ativo, max_baixa_valor, rentabilidade_total_percentual 	
+        Tabela "patrimony_allocations" com id (primária), snapshot_id (estrangeira da patrimony_snapshots), ativo, tipo, valor_investido, rendimento_percentual, valor_atual 	
+
     Execute o back-end:
 
         As páginas PHP serão executadas automaticamente pelo servidor local (abra http://localhost/index.html no navegador).
