@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W1 Consultoria - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pridi', serif;
+        }
+        
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(90deg, #022028 0%, #004357 100%);
+            overflow: hidden;
+        }
+        
+        .login-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo {
+            position: absolute;
+            left: 118px;
+            top: 248px;
+            width: 527px;
+            height: 527px;
+            border-radius: 25px;
+            z-index: 1;
+        }
+        
+        .login-card {
+            position: absolute;
+            right: 330px;
+            top: 253px;
+            width: 517px;
+            height: 755px;
+            background: linear-gradient(180deg, rgba(217, 217, 217, 0.25) 0%, rgba(217, 217, 217, 0.25) 100%);
+            border-radius: 52px;
+            box-shadow: 0px 4px 12px rgba(136, 136, 136, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 30px;
+            z-index: 2;
+        }
+        
+        .login-title {
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 62px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            text-shadow: 0px 4px 4px rgba(136, 136, 136, 1);
+        }
+        
+        .input-group {
+            width: 100%;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .input-label {
+            font-size: 35px;
+            font-weight: 500;
+            line-height: 55px;
+            color: rgba(0, 0, 0, 0.85);
+            margin-left: 14px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .input-field {
+            width: 479px;
+            height: 68px;
+            background-color: rgba(217, 217, 217, 0.94);
+            border: none;
+            border-radius: 20px;
+            padding: 0 20px;
+            font-size: 24px;
+            color: #000;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .login-button {
+            width: 348px;
+            height: 72px;
+            background: linear-gradient(90deg, rgba(3, 33, 41, 0.91) 0%, rgba(35, 128, 114, 0.91) 100%);
+            border-radius: 25px;
+            border: none;
+            color: white;
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 62px;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.25);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .login-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .login-button:active {
+            transform: translateY(1px);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .links-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+        
+        .link {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 31px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .link:hover {
+            color: rgba(217, 217, 217, 0.9);
+            text-decoration: underline;
+        }
+        
+        .create-account {
+            position: absolute;
+            left: 765px;
+            bottom: 286px;
+        }
+        
+        .error-message {
+            color: #ff4d4d;
+            font-size: 16px;
+            margin-top: 5px;
+            margin-left: 14px;
+            display: none;
+        }
+        
+        @media (max-width: 1200px) {
+            .login-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                position: relative;
+                left: 0;
+                top: 0;
+                width: 300px;
+                height: 300px;
+                margin-bottom: 30px;
+            }
+            
+            .login-card {
+                position: relative;
+                right: 0;
+                top: 0;
+                width: 90%;
+                max-width: 500px;
+            }
+            
+            .create-account {
+                position: relative;
+                left: 0;
+                bottom: 0;
+                margin-top: 20px;
+                text-align: center;
+            }
+            
+            .input-field {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .login-title {
+                font-size: 32px;
+                line-height: 48px;
+            }
+            
+            .input-label {
+                font-size: 28px;
+                line-height: 42px;
+            }
+            
+            .login-button {
+                width: 100%;
+                font-size: 32px;
+            }
+            
+            .logo {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="../assets/images/img_logow1consultoriafinanceira2e97mq_1.png" alt="W1 Consultoria Financeira Logo" class="logo">
+        
+        <div class="login-card">
+            <h1 class="login-title">ENTRE NA SUA CONTA</h1>
+            
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="email" class="input-label">E-mail</label>
+                    <input type="email" id="email" class="input-field" required>
+                    <div class="error-message" id="email-error">Por favor, insira um e-mail válido</div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password" class="input-label">Senha</label>
+                    <input type="password" id="password" class="input-field" required>
+                    <div class="error-message" id="password-error">A senha deve ter pelo menos 6 caracteres</div>
+                </div>
+                
+                <button type="submit" class="login-button">LOGIN</button>
+                
+                <div class="links-container">
+                    <a href="#" class="link" id="create-account">CRIE SUA CONTA</a>
+                    <a href="#" class="link" id="forgot-password">ESQUECEU A SENHA?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('login-form');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const emailError = document.getElementById('email-error');
+            const passwordError = document.getElementById('password-error');
+            const createAccountLink = document.getElementById('create-account');
+            const forgotPasswordLink = document.getElementById('forgot-password');
+            
+            // Form validation
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let isValid = true;
+                
+                // Email validation
+                if (!emailInput.value || !isValidEmail(emailInput.value)) {
+                    emailError.style.display = 'block';
+                    emailInput.style.borderColor = '#ff4d4d';
+                    isValid = false;
+                } else {
+                    emailError.style.display = 'none';
+                    emailInput.style.borderColor = '';
+                }
+                
+                // Password validation
+                if (!passwordInput.value || passwordInput.value.length < 6) {
+                    passwordError.style.display = 'block';
+                    passwordInput.style.borderColor = '#ff4d4d';
+                    isValid = false;
+                } else {
+                    passwordError.style.display = 'none';
+                    passwordInput.style.borderColor = '';
+                }
+                
+                if (isValid) {
+                    // Simulate login success
+                    alert('Login bem-sucedido! Redirecionando...');
+                    // In a real application, you would submit the form or make an API call here
+                }
+            });
+            
+            // Input field event listeners to clear errors on input
+            emailInput.addEventListener('input', function() {
+                if (isValidEmail(emailInput.value)) {
+                    emailError.style.display = 'none';
+                    emailInput.style.borderColor = '';
+                }
+            });
+            
+            passwordInput.addEventListener('input', function() {
+                if (passwordInput.value.length >= 6) {
+                    passwordError.style.display = 'none';
+                    passwordInput.style.borderColor = '';
+                }
+            });
+            
+            // Create account link
+            createAccountLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Redirecionando para a página de criação de conta...');
+                // In a real application, you would redirect to the registration page
+            });
+            
+            // Forgot password link
+            forgotPasswordLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Redirecionando para a página de recuperação de senha...');
+                // In a real application, you would redirect to the password recovery page
+            });
+            
+            // Email validation helper function
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        });
+    </script>
+</body>
+</html>

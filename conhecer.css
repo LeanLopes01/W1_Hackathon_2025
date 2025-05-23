@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Regras gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+/* Dropdown */
+nav li {
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.8); /* Fundo transparente com opacidade */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 10px 0;
+}
+/* conhecer.css */
+.home{
+    position: relative;          /* importante! */
+    overflow: hidden;            /* evita barra de rolagem quando as partículas saem da área */
+}
+
+.dropdown-menu a {
+  display: block;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px; /* Bordas arredondadas nos links */
+  transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(0, 247, 255, 0.1); /* Efeito hover suave */
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Span - cor personalizada */
+span {
+  color: rgb(0, 72, 75); /* Amarelo do projeto */
+}
+
+/* Estrutura e fontes principais */
+html {
+  font-size: 82.5%; /* 1rem = 13px */
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: transparent; /* Fundo transparente */
+  color: rgb(0, 0, 0);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  margin-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 8%;
+  background-color: transparent; /* Fundo transparente */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 2rem;
+  color: black;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+}
+
+nav a {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 1.8rem;
+  color: rgb(0, 0, 0);
+  transition: 0.3s ease;
+  border-bottom: 3px solid transparent;
+  padding: 8px 16px;
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+nav a:hover,
+nav a.active {
+  color: rgb(0, 88, 94);
+  border-bottom: 3px solid rgb(0, 117, 126);
+  background-color: rgba(215, 255, 246, 0.651); /* Efeito de fundo suave ao passar o mouse */
+}
+
+@media (max-width: 995px) {
+  nav {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 40%;
+    border-left: 3px solid solid rgb(0, 117, 126);
+    border-bottom: 3px solid solid rgb(0, 117, 126);
+    border-bottom-left-radius: 2rem;
+    padding: 1rem;
+    background-color: transparent;
+    border-top: 0.1rem solid black;
+    display: none;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+
+  nav a:hover,
+  nav a.active {
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: white;
+  color: rgb(0, 0, 0);
+}
+
+header {
+  margin-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 8%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 2rem;
+  color: black;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+}
+
+nav a {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 1.8rem;
+  color: rgb(0, 0, 0);
+  transition: 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+  color: solid rgb(0, 117, 126);;
+  border-bottom: 3px solid solid rgb(0, 117, 126);;
+}
+
+@media (max-width: 995px) {
+  nav {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 40%;
+    border-left: 3px solid solid rgb(0, 117, 126);;
+    border-bottom: 3px solid solid rgb(0, 117, 126);;
+    border-bottom-left-radius: 2rem;
+    padding: 1rem;
+    background-color: transparent;
+    border-top: 0.1rem solid black;
+    display: none;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+
+  nav a:hover,
+  nav a.active {
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+}
+
+section {
+  min-height: 100vh;
+  padding: 5rem 9%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  background-color: transparent
+  position: fixed;
+  width: 80%;
+  z-index: 999;
+  height: 65px;
+  line-height: 65px;
+}
+
+nav .wrapper {
+  position: relative;
+  max-width: 1000px;
+  padding: 0 30px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper .nav_links {
+  display: flex;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Espaço entre imagem e texto */
+  padding: 5rem 10%;
+  background-color: #ffffff; /* Fundo mais claro para contraste */
+}
+
+.home-content {
+  flex: 1; /* O texto ocupará 50% ou ajustará dinamicamente */
+}
+
+.home-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333; /* Cor do texto */
+  margin-top: 5rem;
+}
+
+.home-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #000000; /* Cor de texto secundária */
+}
+
+.home-img {
+  flex: 1; /* A imagem também ocupará 50% ou se ajustará */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-img img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.home-img img:hover {
+  transform: scale(1.05); /* Pequeno zoom ao passar o mouse */
+}
+
+
+
+  
+ 
